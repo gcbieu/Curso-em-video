@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Midia HTML5</title>
+</head>
+<body>
+    <h1>Imagem dinâmica</h1>
+    <p>Tente abrir esse site em vários dispositivos para ver a imagem mudar de tamanho automaticamente.</p>
+
+    <picture>
+        <source media="(max-width: 750px)" srcset="IMAGENS/foto-p.png" type="image/png">
+        <source media="(max-width: 1050px)" srcset="IMAGENS/foto-m.png" type="image/png">
+        <img src="IMAGENS/Sem Título-3.png" alt="Imagem dinâmica">
+    </picture>
+
+    <h1>Reproduzindo Áudio</h1>
+    <p>vamos aprender a reproduzir áudio no HTML5</p>
+    <audio preload="metadata" controls>
+        <source src="midia/happy_mistake.mp3" type="audio/mpeg">
+    </audio>
+
+</body>
+</html>
