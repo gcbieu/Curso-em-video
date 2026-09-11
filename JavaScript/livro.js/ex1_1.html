@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logica de Programação</title>
+</head>
+<body>
+    <script>
+
+/*
+Elabore um programa que leia o valor de um jantar. Calcule e informe o valor da taxa do garçom (10%) e o valor total a ser pago.
+*/
+const valor = Number(window.prompt('Valor da conta: '))
+const taxa = valor * 0.10
+const total = valor + taxa
+alert(`Taxa do Garçom R$ ${taxa.toFixed(2)}\nTotal R$ ${total.toFixed(2)}`)
+
+/*
+Elabora um programa que leia um número. Calcule e informe os seus vizinhos ou seja, o número anterior e posterior
+*/
+const num = Number(window.prompt('Digite um Número: '))
+alert(`Número: ${num}\nVizinhos: ${num - 1} e ${num + 1}`)
+
+
+/*Elabore um programa para uma pizzaria, o qual leia o valor total de uma conta e quantos clientes vão pagá-la. calcule e informe o valor a ser pago por cliente.
+*/
+const conta = Number(window.prompt('Valor da conta: '))
+const cliente = Number(window.prompt('Quantidade de pessoas: '))
+const val = conta/cliente
+alert(`Valor da conta R$: ${conta.toFixed(2)}\nNúmero de clientes: ${cliente}\nValor por cliente R$: ${val.toFixed(2)}`)
+
+/*
+Elabore um programa que leia 2 notas de um aluno e uma disciplina. Calcule e informe a média das notas.
+*/
+const n1 = Number(window.prompt('Nota 1: '))
+const n2 = Number(window.prompt('Nota 2: '))
+const media = (n1+n2)/2
+alert(`1º Nota: ${n1.toFixed(1)}\n 2ºNota: ${n2.toFixed(1)}\nMédia: ${media.toFixed(1)}`)
+
+    </script>
+
+</body>
+</html>

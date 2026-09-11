@@ -57,5 +57,26 @@ Identidade
 5 == '5' = true
 5 == '5' = false
 5 ===
+
+Lógicos
+! -> negação
+&& -> conjunção
+|| -> disjunção
+
+primeiro o não
 */
+
+var idade
+
+function verificaridade(idade){
+
+if (idade >= 18) {
+    return ("Maior de idade")
+} else {
+        return ("Menor de idade")
+    }
+}
+
+idade = Number(window.prompt ('Digite sua idade'))
+window.alert(verificaridade(idade))
 
