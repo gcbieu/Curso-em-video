@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo 2.3</title>
+</head>
+<body>
+    <form>
+    <h1>Revenda de Veículos JS</h1>
+    <p>Veículo: <input type="text" name="nome" required></p>
+    <p>Preço R$: <input type="number" name="valor" required></p>
+    <input type="submit" value="Ver Promoção">
+    </form>
+
+    <h2></h2>
+    <h3></h3>
+    <h4></h4>
+
+    <script>
+
+//apelido -> aponta
+    const frm = document.querySelector("form")
+    const resp1 = document.querySelector("h2")
+    const resp2 = document.querySelector("h3")
+    const resp3 = document.querySelector("h4")
+
+    // quem ouve -> ouve oq -> o q faz qund ouvir ->
+    frm.addEventListener("submit", (e) => {
+
+// pega -> guarda -> calcula
+        const name = frm.nome.value
+        const valor = Number(frm.valor.value)
+        const entrada = Math.floor(valor/2)
+        const rest = Math.floor(valor-entrada)
+        const parc = Math.round(rest / 12)
+
+        //onde -> o q?
+        resp1.innerText = `Promoção: ${name}`
+        resp2.innerText = `Entrada de R$: ${entrada.toFixed(2)}`
+        resp3.innerText = `+12x de ${parc.toFixed(2)}`
+        e.preventDefault()
+    })
+
+    </script>
+</body>
+</html>

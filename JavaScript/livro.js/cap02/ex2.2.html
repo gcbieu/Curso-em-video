@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo 2.2</title>
+</head>
+<body>
+
+    <form>
+
+        <h1>Cine JS: Filmes em Cartaz</h1>
+
+        <p>
+            Título do Filme
+            <input type="text" name="tit" required>
+            <!--
+                INPUT onde o usuário digita o título
+
+                name="tit" → permite acessar pelo formulário:
+                frm.tit
+            -->
+        </p>
+
+        <p>
+            Duração (min)
+            <input type="number" name="dur" id="dur" required>
+        </p>
+
+        <input
+            type="submit"
+            id="subm"
+            value="Converter em Horas e Minutos"
+        >
+        <!--
+            type="submit" → envia o formulário
+            isso dispara o evento "submit"
+        -->
+
+    </form>
+
+
+    <h3></h3>
+    <!-- Aqui vamos MOSTRAR o título em baixo duração -->
+    <h4></h4>
+
+
+    <script>
+
+        // frm RECEBE/APONTA para o <form>
+        const frm = document.querySelector("form")
+
+
+        // resp RECEBE/APONTA para o <h3>
+        // portanto: resp é ONDE vamos mostrar o título
+        const resp = document.querySelector("h3")
+        const resp2 = document.querySelector("h4")
+
+
+        // Quando o FORM for enviado...
+        frm.addEventListener("submit", (e) => {
+
+
+            // frm.tit → acessa o input name="tit"
+            // .value → pega aquilo que o usuário digitou
+            //
+            // titulo RECEBE o conteúdo digitado
+            const titulo = frm.tit.value
+            const duracao = Number(frm.dur.value)
+            const horas = Math.floor(duracao/60)
+            const min = duracao % 60
+            // resp é o <h3>
+            // titulo é o texto que veio do input
+            //
+            // portanto:
+            // <h3> recebe o TÍTULO digitado
+            resp.innerText = `${titulo}`
+
+            resp2.innerText = `${horas} horas(s) e ${min} minutos(s)`
+
+
+            // Impede o comportamento padrão do formulário
+            // que faria a página ser enviada/recarregada
+            e.preventDefault()
+
+        })
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Primeiros passos com DOM</title>
+</head>
+<style>
+    body{
+        background: rgba(29, 87, 245, 0.777);
+        color: white;
+        font: normal 18pt Arial;
+    }
+</style>
+<body>
+    <h1>Iniciando estudos DOM</h1>
+
+    <p>Aqui vai o resultado</p>
+
+    <p name="texto">
+        Aprendendo a usar o <strong>DOM</strong> em JavaScript
+    </p>
+
+    <div id="msg">Clique em mim</div>
+
+    <div class="caixa">Exemplo de classe</div>
+
+    <p class="especial">Exemplo para querySelector</p>
+
+
+    <script>
+        // Corpo da página
+        var corpo = window.document.body
+
+
+        // 1. POR MARCA (TAG)
+        // Pega o primeiro <p>
+        var p1 = window.document.getElementsByTagName('p')[0]
+        p1.style.color = 'red'
+
+
+        // 2. POR ID
+        // Pega o elemento com id="msg"
+        var d = window.document.getElementById('msg')
+        d.style.backgroundColor = 'yellow'
+
+
+        // 3. POR NOME
+        // Pega o primeiro elemento com name="texto"
+        var nome = window.document.getElementsByName('texto')[0]
+        nome.style.color = 'green'
+
+
+        // 4. POR CLASSE
+        // Pega o primeiro elemento com class="caixa"
+        var classe = window.document.getElementsByClassName('caixa')[0]
+        classe.style.backgroundColor = 'lightblue'
+
+
+        // 5. POR SELETOR - querySelector()
+        // Pega o PRIMEIRO elemento que encontrar
+        var seletor = window.document.querySelector('p.especial')
+        seletor.style.color = 'purple'
+
+
+        // 6. POR SELETOR - querySelectorAll()
+        // Pega TODOS os <p>
+        var todos = window.document.querySelectorAll('p')
+
+        todos[0].style.fontWeight = 'bold'
+    </script>
+</body>
+</body>
+</html>
