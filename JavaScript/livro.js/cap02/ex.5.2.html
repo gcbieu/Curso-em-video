@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo 2.5</title>
+</head>
+<body>
+    <form>
+    <h1>Farmácia JS</h1>
+
+    <p>Medicamento: <input type="text" name="nome"></p>
+    <p>Preço R$: <input type="number" name="preco" min="0" step="0.01"></p>
+
+    <input type="submit" value="Mostrar Promoção">
+    </form>
+
+    <h2></h2>
+    <h3></h3>
+
+    <script>
+
+        const frm = document.querySelector("form")
+        const resp1  = document.querySelector("h2")
+        const resp2  = document.querySelector("h3")
+
+        frm.addEventListener("submit", (e) => {
+        
+        const name = frm.nome.value
+        const valor = Number(frm.preco.value)
+        const prom = Math.floor(valor*2)
+
+        resp1.innerText = `Promoção de ${name}`
+        resp2.innerText = `Leve 2 por apenas R$: ${prom.toFixed(2)}`
+        e.preventDefault()
+        })
+
+    </script>
+</body>
+</html>

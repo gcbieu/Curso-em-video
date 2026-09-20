@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+</head>
+<body>
+    <form>
+
+    <h1>Calculadora</h1>
+    <p>Insira um Número: <input type="number" name="inVar1"></p>
+    
+    <input type="button" value="+" name="soma">
+    <input type="button" value="-" name="subtracao">
+    <input type="button" value="*" name="multiplicacao">
+    <input type="button" value="/" name="divisao">
+
+    <p>Insira outro Número: <input type="number" name="inVar2"></p>
+    <input type="submit" value="=">
+
+</form>
+
+    <h2></h2>
+
+    <script>
+
+        const frm = document.querySelector("form")
+        //const ope = document.querySelector("")
+        const result = document.querySelector("h2")
+
+
+        frm.addEventListener("submit", (e) =>{
+
+        const var1 = Number(frm.inVar1.value)
+        const var2 = Number(frm.inVar2.value)
+        const soma = var1+var2
+
+        result.innerText = `${soma}`
+
+            e.preventDefault()
+        })
+    </script>
+</body>
+</html>
