@@ -9,34 +9,61 @@
     <form>
 
     <h1>Calculadora</h1>
-    <p>Insira um Número: <input type="number" name="inVar1"></p>
     
+    <h2 id="visor"></h2>
+
+    <input type="button" value="CE" class="">
+    <input type="button" value="C" class="apagartudo">
+    <input type="button" value="⌫" class="apagar">
+
+    <input type="button" value="1" class="numero">
+    <input type="button" value="2" class="numero">
+    <input type="button" value="3" class="numero">
+    <input type="button" value="4" class="numero">
+    <input type="button" value="5" class="numero">
+    <input type="button" value="6" class="numero">
+    <input type="button" value="7" class="numero">
+    <input type="button" value="8" class="numero">
+    <input type="button" value="9" class="numero">
+
     <input type="button" value="+" name="soma">
     <input type="button" value="-" name="subtracao">
     <input type="button" value="*" name="multiplicacao">
     <input type="button" value="/" name="divisao">
 
-    <p>Insira outro Número: <input type="number" name="inVar2"></p>
     <input type="submit" value="=">
 
 </form>
 
-    <h2></h2>
-
     <script>
 
+        const visor = document.querySelector("#visor")
+        const numero = document.querySelectorAll(".numero")
+        const apagar = document.querySelector(".apagar")
+        const apagartudo = document.querySelector(".apagartudo")
         const frm = document.querySelector("form")
         //const ope = document.querySelector("")
-        const result = document.querySelector("h2")
 
+        numero.forEach((button) => {
+
+            button.addEventListener("click", (e) => {
+                const num = button.value
+                visor.innerText += num
+
+            })
+        })        
+
+           apagar.addEventListener("click", (e) => {
+            const atual = visor.innerText
+            const novo = atual.slice(0, -1)
+            visor.innerText = novo
+            })
+
+            apagartudo.addEventListener("click", (e) => {
+            visor.innerText = ""
+            })
 
         frm.addEventListener("submit", (e) =>{
-
-        const var1 = Number(frm.inVar1.value)
-        const var2 = Number(frm.inVar2.value)
-        const soma = var1+var2
-
-        result.innerText = `${soma}`
 
             e.preventDefault()
         })
