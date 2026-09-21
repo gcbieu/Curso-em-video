@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Live From</title>
+  </head>
+  <body>
+    <h1>Vivendo em...</h1>
+    <p>
+      Digite o país em que voce mora
+      <input type="text" name="txtlocal" id="txtlocal" />
+    </p>
+    <input type="button" value="Verificar Nacionalidade" onclick="local()" />
+    <div id="res"></div>
+
+    <script>
+      function local() {
+        const pais = document.querySelector("Input#txtlocal");
+        const InPais = pais.value.toLowerCase();
+        const resp = document.querySelector("div#res");
+
+        resp.innerHTML += `<p>Vivendo em ${InPais}</p>`;
+
+        if (InPais == "brasil") {
+          resp.innerHTML += `<p>Você é brasileira</p>`;
+        } else {
+          resp.innerHTML += `<p>Você é estrangeira</p>`;
+        }
+      }
+    </script>
+  </body>
+</html>
